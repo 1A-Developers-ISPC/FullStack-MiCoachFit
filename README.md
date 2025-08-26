@@ -2,7 +2,7 @@
 </br>
 
 <div align=center>
-<img src="Frontend/img/logo-MiCoachFit/logo-MiCoachFit-color.png" alt="Logo MiCoachFit" width="400">
+<img src="front/img/logo-MiCoachFit/logo-MiCoachFit-color.png" alt="Logo MiCoachFit" width="400">
 </div>
 
 </br>
@@ -87,7 +87,7 @@ En próximas instancias de desarrollo y escalado de la aplicacion, se podrian ex
 
 
 <div align=center>
-  <img src="Frontend/img/logo-1A-Dev/logo-color-1A-Dev.png" alt="Logo 1A-Developers" width="250"/>
+  <img src="front/img/logo-1A-Dev/logo-color-1A-Dev.png" alt="Logo 1A-Developers" width="250"/>
 </div>
 
 </br>
@@ -102,6 +102,6 @@ Somos el grupo de trabajo **1A-Developers**, estudiantes del primer año de la T
 * 👨🏽‍💻**Dario Bosque** - [Developer] - https://github.com/dariodev18
 * 👨🏽‍💻**Eric Heredia** - [Developer] - https://github.com/Heredia-Eric
 * 👨🏽‍💻**Maximino Moyano** - [Developer] - https://github.com/MaxgelMax
-* * 👩🏽‍💻**Kiara Fernandez** - [Developer] - https://github.com/kiarafernandez756
+* 👩🏽‍💻**Kiara Fernandez** - [Developer] - https://github.com/kiarafernandez756
 * 👩🏽‍💻**Tiago Javier Nievas** - [Developer] - https://github.com/TiagonievasGH
 <br/>
