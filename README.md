@@ -97,7 +97,6 @@ En próximas instancias de desarrollo y escalado de la aplicacion, se podrian ex
 
 </br>
 </br>
-</br>
 
 ## 👥 Integrantes del Team
 
