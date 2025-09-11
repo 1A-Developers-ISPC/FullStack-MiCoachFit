@@ -1,0 +1,113 @@
+:root{
+    --header-color: #ffffff; /* blanco*/
+    --body-color: #9f9f9f; /*gris transparente*/
+    --footer-color: #1f3894; /*azul sólido*/
+    --border-image: 2px solid#2e8392; /*turquesa sólido*/
+ }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: var(--header-color);
+    padding: 30px; 
+}
+
+body{
+    background-color:  var(--body-color);
+    font-size: 18px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+p{
+    text-align: justify;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+footer{
+    background-color: var(--footer-color);
+    margin-top: 200px;
+    padding: 60px;
+}
+
+
+figcaption{
+    text-align: left;
+}
+
+/* boton */
+.btn-transformacion{
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1f3894;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0,0, 0.2);
+    transition: backround 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    margin-left: 600px;    
+}
+
+.btn-transformacion:hover{
+    background: #2a4ac0;
+    transform: translateY(-2px);
+}
+
+.container{
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.equipo{
+    margin: 100px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 40px;
+    margin-top: 30px;
+}
+/* imagen principal */
+.equipo .principal img {
+    width: 400px;
+    margin-left: 50px;
+    border-radius: 15px;
+}
+
+/* imagenes pequeñas */
+.lado-derecho{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    gap: 100px;
+}
+
+.lado-derecho img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--border-image);
+}
+
+/* texto imagenes pequeñas */
+.alex p{
+    text-align: justify;
+    
+}
+
+.laura p{
+    text-align: justify;
+    padding-right: 20px;
+    margin-top: 2px;
+}
