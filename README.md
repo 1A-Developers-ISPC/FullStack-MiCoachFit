@@ -2,7 +2,7 @@
 </br>
 
 <div align=center>
-<img src="Frontend/img/logo-MiCoachFit/logo-MiCoachFit-color.png" alt="Logo MiCoachFit" width="400">
+<img src="front/img/logo-MiCoachFit/logo-MiCoachFit-color.png" alt="Logo MiCoachFit" width="400">
 </div>
 
 </br>
@@ -80,17 +80,21 @@ En próximas instancias de desarrollo y escalado de la aplicacion, se podrian ex
 
 * Servicios asincrónicos: Sección para atender a alumnos de manera virtual
 
+</br>
+
+## 🛠️ **Stack Tecnológico**
+
+## **Frontend:** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="html5" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="css3" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+
+## **Backend:** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="python" width="40" height="40"/>
 
 </br>
 </br>
-</br>
-
 
 <div align=center>
-  <img src="Frontend/img/logo-1A-Dev/logo-color-1A-Dev.png" alt="Logo 1A-Developers" width="250"/>
+  <img src="front/img/logo-1A-Dev/logo-color-1A-Dev.png" alt="Logo 1A-Developers" width="250"/>
 </div>
 
-</br>
 </br>
 </br>
 
@@ -102,6 +106,6 @@ Somos el grupo de trabajo **1A-Developers**, estudiantes del primer año de la T
 * 👨🏽‍💻**Dario Bosque** - [Developer] - https://github.com/dariodev18
 * 👨🏽‍💻**Eric Heredia** - [Developer] - https://github.com/Heredia-Eric
 * 👨🏽‍💻**Maximino Moyano** - [Developer] - https://github.com/MaxgelMax
-* * 👩🏽‍💻**Kiara Fernandez** - [Developer] - https://github.com/kiarafernandez756
+* 👩🏽‍💻**Kiara Fernandez** - [Developer] - https://github.com/kiarafernandez756
 * 👩🏽‍💻**Tiago Javier Nievas** - [Developer] - https://github.com/TiagonievasGH
 <br/>
