@@ -64,3 +64,136 @@ class SistemaUsuarios:
                 self.menu_usuario(usuario)
         else:
             print("\n❌ Nombre de usuario o contraseña incorrectos.")
+
+    def menu_admin(self):
+        while True:
+            print("\n--- Menú Administrador ---")
+            print("1. Ver todos los usuarios")
+            print("2. Cambiar rol de usuario")
+            print("3. Eliminar usuario")
+            print("4. Cerrar sesión")
+            opcion = input("Seleccione una opción: ")
+            if opcion == '1':
+                self.mostrar_usuarios()
+            elif opcion == '2':
+                self.cambiar_rol()
+            elif opcion == '3':
+                self.eliminar_usuario()
+            elif opcion == '4':
+                print("\n🔒 Sesión cerrada.")
+                break
+            else:
+                print("\n⚠️ Opción inválida")
+
+    def menu_usuario(self, usuario):
+        while True:
+            print(f"\n--- Menú Usuario ---")
+            print(f"1. Ver mi perfil")
+            print(f"2. Editar mi perfil")
+            print(f"3. Cerrar sesión")
+            opcion = input("Seleccione una opción: ")
+            if opcion == '1':
+                print(f"\nNombre: {usuario.nombre} {usuario.apellido}")
+                print(f"Nombre de usuario: {usuario.nombre_usuario}")
+                print(f"Teléfono: {usuario.telefono}")
+                print(f"Email: {usuario.email}")
+                print(f"Rol: {usuario.rol}")
+            elif opcion == '2':
+                self.editar_perfil(usuario)
+                usuario_actualizado = self.buscar_usuario(usuario.nombre_usuario)
+                if usuario_actualizado:
+                    usuario = usuario_actualizado
+            elif opcion == '3':
+                print("\n🔒 Sesión cerrada.")
+                break
+            else:
+                print("\n⚠️ Opción inválida")
+
+    def mostrar_usuarios(self):
+        print("\n📋 Lista de usuarios:")
+        usuarios_db = self.db.obtener_todos_usuarios()
+        for usuario_db in usuarios_db:
+            print(f" - ID: {usuario_db['id_usuario']} | {usuario_db['nombre']} {usuario_db['apellido']} | Usuario: {usuario_db['nombre_usuario']} | Rol: {usuario_db['nombre_rol']}")
+
+    def cambiar_rol(self):
+        nombre_usuario = input("Ingrese el nombre del usuario a modificar: ")
+        if not nombre_usuario.strip():
+            print("\n❌ El nombre de usuario no puede estar vacío.")
+            return
+        usuario = self.db.buscar_usuario(nombre_usuario)
+        if usuario:
+            nuevo_rol = input("Ingrese el nuevo rol (admin/usuario): ")
+            if nuevo_rol in ['admin', 'usuario']:
+                if self.db.cambiar_rol(nombre_usuario, nuevo_rol):
+                    print("\n✅ Rol actualizado.")
+                else:
+                    print("\n❌ No se pudo actualizar el rol.")
+            else:
+                print("\n❌ Rol inválido.")
+        else:
+            print("\n❌ Usuario no encontrado.")
+
+    def eliminar_usuario(self):
+        try:
+            id_usuario_eliminar = int(input("Ingrese el ID del usuario a eliminar: "))
+            if self.db.eliminar_usuario(id_usuario_eliminar):
+                print("\n✅ Usuario eliminado.")
+            else:
+                print("\n❌ No se pudo eliminar el usuario. El ID no existe.")
+        except ValueError:
+            print("\n❌ Por favor, ingrese un número de ID válido.")
+
+    def editar_perfil(self, usuario):
+        print("\n--- Editar Perfil ---")
+        print("Deje el campo en blanco si no desea modificarlo.")
+        
+        nuevo_nombre = input(f"Nombre ({usuario.nombre}): ")
+        if nuevo_nombre.strip() and self.validar_nombre_apellido(nuevo_nombre):
+            usuario.nombre = nuevo_nombre
+        else:
+            print("\n⚠️ Nombre no válido o sin cambios.")
+
+        nuevo_apellido = input(f"Apellido ({usuario.apellido}): ")
+        if nuevo_apellido.strip() and self.validar_nombre_apellido(nuevo_apellido):
+            usuario.apellido = nuevo_apellido
+        else:
+            print("\n⚠️ Apellido no válido o sin cambios.")
+
+        nuevo_telefono = input(f"Teléfono ({usuario.telefono}): ")
+        if nuevo_telefono.strip() and self.validar_telefono(nuevo_telefono):
+            usuario.telefono = nuevo_telefono
+        else:
+            print("\n⚠️ Teléfono no válido o sin cambios.")
+            
+        nuevo_email = input(f"Email ({usuario.email}): ")
+        if nuevo_email.strip() and self.validar_email(nuevo_email):
+            usuario.email = nuevo_email
+        else:
+            print("\n⚠️ Email no válido o sin cambios.")
+
+        nuevo_contrasena = input("Nueva contraseña (dejar en blanco para no cambiar): ")
+        if nuevo_contrasena.strip() and self.validar_contrasena(nuevo_contrasena):
+            usuario.contrasena = nuevo_contrasena
+        else:
+            print("\n⚠️ Contraseña no válida o sin cambios.")
+            
+        datos_a_actualizar = {}
+        if nuevo_nombre.strip() and self.validar_nombre_apellido(nuevo_nombre):
+            datos_a_actualizar['nombre'] = nuevo_nombre
+        if nuevo_apellido.strip() and self.validar_nombre_apellido(nuevo_apellido):
+            datos_a_actualizar['apellido'] = nuevo_apellido
+        if nuevo_telefono.strip() and self.validar_telefono(nuevo_telefono):
+            datos_a_actualizar['telefono'] = nuevo_telefono
+        if nuevo_email.strip() and self.validar_email(nuevo_email):
+            datos_a_actualizar['email'] = nuevo_email
+        if nuevo_contrasena.strip() and self.validar_contrasena(nuevo_contrasena):
+            datos_a_actualizar['password'] = nuevo_contrasena
+
+        if datos_a_actualizar:
+            if self.db.actualizar_usuario(usuario.nombre_usuario, **datos_a_actualizar):
+                print("\n✅ Perfil actualizado exitosamente.")
+            else:
+                print("\n❌ No se pudo actualizar el perfil.")
+        else:
+            print("\n📝 No se realizaron cambios en el perfil.")
+

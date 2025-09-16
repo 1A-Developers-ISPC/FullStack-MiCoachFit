@@ -59,3 +59,55 @@ class ConexionBD:
             self.connection.rollback()
             return False
 
+    def cambiar_rol(self, nombre_usuario, nuevo_rol):
+        try:
+            self.cursor.execute("SELECT id_rol FROM roles WHERE nombre_rol = %s", (nuevo_rol,))
+            rol_id = self.cursor.fetchone()
+            if not rol_id:
+                print(f"\n❌ Rol '{nuevo_rol}' no encontrado.")
+                return False
+            query = "UPDATE usuarios SET id_rol = %s WHERE nombre_usuario = %s"
+            self.cursor.execute(query, (rol_id['id_rol'], nombre_usuario))
+            self.connection.commit()
+            return True
+        except Error as e:
+            print(f"\n❌ Error al actualizar el rol: {e}")
+            self.connection.rollback()
+            return False
+
+    def eliminar_usuario(self, id_usuario):
+        try:
+            query = "DELETE FROM usuarios WHERE id_usuario = %s"
+            self.cursor.execute(query, (id_usuario,))
+            self.connection.commit()
+            return self.cursor.rowcount > 0
+        except Error as e:
+            print(f"\n❌ Error al eliminar el usuario: {e}")
+            self.connection.rollback()
+            return False
+
+    def obtener_todos_usuarios(self):
+        query = "SELECT u.*, r.nombre_rol FROM usuarios u JOIN roles r ON u.id_rol = r.id_rol"
+        self.cursor.execute(query)
+        return self.cursor.fetchall()
+        
+    def actualizar_usuario(self, nombre_usuario, **kwargs):
+        try:
+            updates = []
+            values = []
+            for key, value in kwargs.items():
+                updates.append(f"{key} = %s")
+                values.append(value)
+            
+            if not updates:
+                return False
+            query = "UPDATE usuarios SET " + ", ".join(updates) + " WHERE nombre_usuario = %s"
+            values.append(nombre_usuario)
+            
+            self.cursor.execute(query, tuple(values))
+            self.connection.commit()
+            return self.cursor.rowcount > 0
+        except Error as e:
+            print(f"\n❌ Error al actualizar el usuario: {e}")
+            self.connection.rollback()
+            return False
