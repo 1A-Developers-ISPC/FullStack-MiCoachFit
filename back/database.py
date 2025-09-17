@@ -22,7 +22,7 @@ class ConexionBD:
             )
             if self.connection.is_connected():
                 print("\n✅ Conexión a la base de datos exitosa.")
-                self.cursor = self.connection.cursor(dictionary=True)
+                self.cursor = self.connection.cursor(dictionary=True) # Los resultados se devuelven como diccionarios
                 return True
         except Error as e:
             print(f"\n❌ Error al conectar a la base de datos: {e}")
@@ -34,13 +34,11 @@ class ConexionBD:
             self.connection.close()
             print("\n🔒 Conexión a la base de datos cerrada.")
 
-    
     def buscar_usuario(self, nombre_usuario):
         query = "SELECT u.*, r.nombre_rol FROM usuarios u JOIN roles r ON u.id_rol = r.id_rol WHERE u.nombre_usuario = %s"
         self.cursor.execute(query, (nombre_usuario,))
         return self.cursor.fetchone()
-    
-    
+
     def registrar_usuario(self, nombre, apellido, email, nombre_usuario, telefono, contrasena, rol):
         try:
             self.cursor.execute("SELECT id_rol FROM roles WHERE nombre_rol = %s", (rol,))
@@ -66,6 +64,7 @@ class ConexionBD:
             if not rol_id:
                 print(f"\n❌ Rol '{nuevo_rol}' no encontrado.")
                 return False
+
             query = "UPDATE usuarios SET id_rol = %s WHERE nombre_usuario = %s"
             self.cursor.execute(query, (rol_id['id_rol'], nombre_usuario))
             self.connection.commit()
@@ -92,6 +91,7 @@ class ConexionBD:
         return self.cursor.fetchall()
         
     def actualizar_usuario(self, nombre_usuario, **kwargs):
+        """Actualiza los datos de un usuario en la base de datos."""
         try:
             updates = []
             values = []
@@ -100,7 +100,8 @@ class ConexionBD:
                 values.append(value)
             
             if not updates:
-                return False
+                return False # No hay nada que actualizar
+
             query = "UPDATE usuarios SET " + ", ".join(updates) + " WHERE nombre_usuario = %s"
             values.append(nombre_usuario)
             
