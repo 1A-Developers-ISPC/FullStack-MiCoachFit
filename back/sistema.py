@@ -6,8 +6,30 @@ class SistemaUsuarios:
     def __init__(self, db):
         self.db = db
     
+    def validar_nombre_apellido(self, valor):
+        return bool(valor.strip())
+
     def validar_nombre_usuario(self, valor):
         return bool(valor.strip()) and not self.db.buscar_usuario(valor.strip())
+
+    def validar_telefono(self, telefono):
+        telefono = telefono.strip()
+        return re.fullmatch(r'\d{7,15}', telefono) is not None
+
+    def validar_email(self, email):
+        email = email.strip()
+        patron_email = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+        return re.match(patron_email, email) is not None
+
+    def validar_contrasena(self, contrasena):
+        contrasena = contrasena.strip()
+        if len(contrasena) < 6:
+            return False
+        if not re.search(r'[A-Za-z]', contrasena):
+            return False
+        if not re.search(r'\d', contrasena):
+            return False
+        return True
 
     def buscar_usuario(self, nombre_usuario):
         usuario_db = self.db.buscar_usuario(nombre_usuario)
@@ -100,6 +122,7 @@ class SistemaUsuarios:
                 print(f"Rol: {usuario.rol}")
             elif opcion == '2':
                 self.editar_perfil(usuario)
+                # Recargamos la información del usuario después de la edición
                 usuario_actualizado = self.buscar_usuario(usuario.nombre_usuario)
                 if usuario_actualizado:
                     usuario = usuario_actualizado
@@ -109,10 +132,12 @@ class SistemaUsuarios:
             else:
                 print("\n⚠️ Opción inválida")
 
+
     def mostrar_usuarios(self):
         print("\n📋 Lista de usuarios:")
         usuarios_db = self.db.obtener_todos_usuarios()
         for usuario_db in usuarios_db:
+            # Corregido: ahora se imprime el ID del usuario
             print(f" - ID: {usuario_db['id_usuario']} | {usuario_db['nombre']} {usuario_db['apellido']} | Usuario: {usuario_db['nombre_usuario']} | Rol: {usuario_db['nombre_rol']}")
 
     def cambiar_rol(self):
@@ -177,6 +202,7 @@ class SistemaUsuarios:
         else:
             print("\n⚠️ Contraseña no válida o sin cambios.")
             
+        # Creamos un diccionario con los datos a actualizar
         datos_a_actualizar = {}
         if nuevo_nombre.strip() and self.validar_nombre_apellido(nuevo_nombre):
             datos_a_actualizar['nombre'] = nuevo_nombre
@@ -196,4 +222,3 @@ class SistemaUsuarios:
                 print("\n❌ No se pudo actualizar el perfil.")
         else:
             print("\n📝 No se realizaron cambios en el perfil.")
-
