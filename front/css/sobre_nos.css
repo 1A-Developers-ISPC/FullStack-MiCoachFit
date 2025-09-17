@@ -1,0 +1,342 @@
+/* --- VARIABLES--- */
+:root {
+    --header-color: #ffffff;
+    --body-color: #f4f7f6;
+    --footer-color: #1f3894;
+    --accent-color: #2e8392;
+    --text-color: #333;
+    --border-image: 3px solid var(--accent-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* main {
+    flex: 1;
+} */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+/* .navbar-brand img {
+            border-radius: 50%;
+        } */
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.btn-outline-warning {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+/* --- SECCIÓN SOBRE NOSOTROS --- */
+#sobre-nosotros {
+    padding: 40px 0;
+}
+
+#sobre-nosotros h2 {
+    color: var(--footer-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#sobre-nosotros p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* --- SECCIÓN NUESTRO EQUIPO --- */
+.nuestro-equipo {
+    padding: 50px 0;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 40px 0;
+}
+
+.equipo-titulo {
+    color: var(--footer-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.equipo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.principal {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.principal img {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.lado-derecho {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.alex,
+.laura {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--body-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.alex img,
+.laura img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--border-image);
+    flex-shrink: 0;
+}
+
+figcaption {
+    flex: 1;
+}
+
+figcaption strong {
+    color: var(--footer-color);
+    font-size: 1.2rem;
+}
+
+figcaption p {
+    margin: 8px 0 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- BOTÓN DE TRANSFORMACIÓN --- */
+.btn-centro {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.btn-transformacion {
+    padding: 15px 35px;
+    background: linear-gradient(135deg, var(--footer-color), var(--accent-color));
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-transformacion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--footer-color);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+footer .row {
+    align-items: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+    color: #ffc107;
+}
+
+footer svg {
+    transition: transform 0.3s ease;
+    width: 24px;
+    height: 24px;
+}
+
+footer svg:hover {
+    transform: scale(1.2);
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- DISEÑO RESPONSIVO --- */
+
+/* Para Tablets */
+@media (max-width: 992px) {
+    .equipo {
+        gap: 35px;
+    }
+
+    .principal,
+    .lado-derecho {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+/* Para Móviles Grandes */
+@media (max-width: 768px) {
+    .equipo-titulo {
+        font-size: 1.8rem;
+    }
+
+    .nuestro-equipo {
+        padding: 40px 20px;
+        margin: 30px 0;
+    }
+
+    .alex,
+    .laura {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .alex img,
+    .laura img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .btn-transformacion {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    footer .row>div {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    footer ul {
+        align-items: center;
+    }
+}
+
+/* Para Móviles Pequeños (400px o menos) */
+@media (max-width: 400px) {
+    .equipo-titulo {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    .equipo {
+        gap: 25px;
+    }
+
+    .alex,
+    .laura {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .alex img,
+    .laura img {
+        width: 80px;
+        height: 80px;
+    }
+
+    figcaption strong {
+        font-size: 1.1rem;
+    }
+
+    figcaption p {
+        font-size: 0.9rem;
+    }
+
+    .btn-transformacion {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    #sobre-nosotros p {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .footer-social {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
