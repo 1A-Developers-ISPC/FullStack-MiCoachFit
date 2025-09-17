@@ -1,10 +1,25 @@
-# ------------------- main.py -------------------
 from sistema import SistemaUsuarios
+from database import ConexionBD
+from dbConfig import db_host, db_port, db_user, db_password, db_name
 
 def main():
-    sistema = SistemaUsuarios()
+    db_conn = ConexionBD(
+        host=db_host, 
+        port=db_port, 
+        user=db_user, 
+        password=db_password, 
+        database=db_name
+    )
 
-    # Crear admin por defecto si no existe
+    # Verifica si la conexión es exitosa
+    if not db_conn.conectar():
+        print("El programa no puede continuar sin una conexión a la base de datos.")
+        return
+
+    # Pasa la instancia de la base de datos al sistema de usuarios
+    sistema = SistemaUsuarios(db_conn)
+
+    # Crear admin por defecto si no existe en la BD
     if not sistema.buscar_usuario("admin"):
         sistema.registrar_usuario(
             nombre="Admin",
@@ -15,7 +30,7 @@ def main():
             contrasena="admin123",
             rol="admin"
         )
-
+    
     while True:
         print("\n=== Sistema de Usuarios MiCoachFit ===")
         print("1. Registrar usuario")
@@ -36,10 +51,12 @@ def main():
             contrasena = input("Contraseña: ")
             sistema.iniciar_sesion(nombre_usuario, contrasena)
         elif opcion == '3':
-            print("Hasta luego!")
+            print("\nHasta luego!")
             break
         else:
-            print("⚠️ Opción inválida")
+            print("\n⚠️ Opción inválida")
+
+    db_conn.desconectar()
 
 if __name__ == "__main__":
     main()
