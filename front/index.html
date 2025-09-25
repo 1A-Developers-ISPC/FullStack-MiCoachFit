@@ -23,7 +23,7 @@
       </a>
 
       <!-- Botón hamburguesa para pantallas pequeñas -->
-      <button class="navbar-toggler btn-outline-primary" type="button" data-bs-toggle="collapse"
+      <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,15 +45,14 @@
           </li>
           <li class="nav-item">
             <!-- Botón con SVG -->
-            <button type="button" class="btn btn-outline-warning d-flex align-items-center gap-2" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+            <a type="button" class="btn d-flex align-items-center gap-2" href="login.html">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person"
                 viewBox="0 0 16 16">
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 <path d="M14 14s-1-4-6-4-6 4-6 4 1 1 6 1 6-1 6-1z" />
               </svg>
               Iniciar Sesión
-            </button>
+            </a>
           </li>
         </ul>
       </div>
@@ -66,8 +65,8 @@
         <p class="fs-5">Tu compañero ideal para alcanzar tus metas de fitness.</p>
         <h1 class="fs-1">Bienvenido a MiCoachFit</h1>
 
-        <button class="mt-2 btn btn-primary">Iniciar Sesión</button>
-        <button class="mt-2 btn btn-outline-primary text-white">Registrarse</button>
+        <a class="m-2 btn text-white boton-login" href="login.html">Iniciar Sesión</a>
+        <a class="m-2 btn text-white" href="register.html">Registrarse</a>
       </div>
     </div>
     <div class="col-sm-6"></div>
