@@ -195,7 +195,7 @@ footer p{
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
+    color: #333;   
 }
 
 .seccion-derecha input {
@@ -205,6 +205,10 @@ footer p{
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+}
+
+.seccion-derecha input:focus {
+    outline-color: #1f3993;
 }
 
 .seccion-derecha button {
@@ -235,5 +239,13 @@ footer p{
     .seccion-izquierda,
     .seccion-derecha {
         width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .seccion-izquierda {
+        position: relative;
+        top: 10px;
+        font-size: small;
+        
     }
 }
