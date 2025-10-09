@@ -1,0 +1,1 @@
+/*Script.js contiene la logica JS para validar formularios y navegar entre paginas */
