@@ -179,17 +179,17 @@ figcaption p {
 }
 
 /* --- FOOTER --- */
-footer {
+/* footer {
     background-color: var(--footer-color);
     color: white;
     padding: 40px 0 20px;
     margin-top: 60px;
-}
+} */
 
 footer .row {
     align-items: center;
 }
-
+/* 
 footer ul {
     list-style: none;
     padding: 0;
@@ -198,7 +198,7 @@ footer ul {
     flex-direction: column;
     gap: 8px;
     align-items: center;
-}
+} */
 
 footer a {
     color: white;
