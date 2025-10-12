@@ -54,3 +54,9 @@ button {
 a {
     color: #2563eb
 }
+
+.logo_login {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 150px;
+}
