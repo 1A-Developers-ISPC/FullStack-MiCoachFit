@@ -1,0 +1,92 @@
+  body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .calendar-container {
+      margin-top: 40px;
+  }
+
+  .calendar {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: white;
+  }
+
+  .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+
+  .calendar-header h4 {
+      margin: 0;
+  }
+
+  .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+  }
+
+  .calendar-day {
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .calendar-day:hover {
+      background-color: #e9ecef;
+  }
+
+  .calendar-day.today {
+      background-color: #0d6efd;
+      color: white;
+      font-weight: bold;
+  }
+
+  .day-name {
+      font-weight: 600;
+      background-color: #f1f3f5;
+      border-radius: 5px;
+      padding: 5px;
+  }
+
+  .session-form {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: white;
+  }
+
+  .session-form h2 {
+      font-weight: 600;
+      color: #212529;
+  }
+
+  .session-form small {
+      color: #6c757d;
+  }
+
+  .availability {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-top: 5px;
+  }
+
+  .available {
+      background-color: #ffc107;
+      /* amarillo */
+  }
+
+  .full {
+      background-color: #0d6efd;
+      /* azul */
+  }
