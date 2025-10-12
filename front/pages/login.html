@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login MiCoachFit</title>
+    <link rel="stylesheet" href="../css/login_registro.css">
+</head>
+<body id="page-login">
+    <!-- Contenedor principal con estilo de tarjeta -->
+    <main class="card">
+        <!-- Título principal de la página -->
+        <h1>Iniciar Sesion</h1>
+        <!-- Formulario de inicio de sesión -->
+        <form id="loginForm" autocomplete="on">
+            <!-- Campo para el nombre de usuario -->
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="30" placeholder="Tu Usuario" />
+
+            <!-- Campo para la contraseña -->
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="50" placeholder="Contraseña" />
+
+            <!-- Área para mostrar mensajes de error -->
+            <span id="loginError" class="error" aria-live="polite"></span>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Enlace para usuarios que no tienen cuenta -->
+        <p>¿No tienes cuenta? <a href="register.html">Registrate</a></p>
+
+        <!-- Inclusión del script de funcionalidad -->
+        <script src="../js/script.js"></script>
+    </main>
+</body>
+</html>

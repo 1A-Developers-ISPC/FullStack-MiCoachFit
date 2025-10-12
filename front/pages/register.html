@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register MiCoachFit</title>
+    <link rel="stylesheet" href="../css/login_registro.css">
+</head>
+<body id="page-register">
+    <!-- Contenedor principal con estilo de tarjeta -->
+    <main class="card">
+        <!-- Título principal de la página -->
+        <h1>Registro de Usuario</h1>
+        <!-- Formulario de registro de usuario -->
+        <form id="registerForm">
+            <!-- Campo para el nombre del usuario -->
+            <label for="firstName">Nombre</label>
+            <input type="text" id="firstName" name="firstName" required minlength="2" maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios" placeholder="Nombre" />
+
+            <!-- Campo para el apellido del usuario -->
+            <label for="lastName">Apellido</label>
+            <input type="text" id="lastName" name="lastName" required minlength="2" maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios" placeholder="Apellido"/>
+
+            <!-- Campo para el DNI (documento nacional de identidad) -->
+            <label for="dni">DNI</label>
+            <!-- NOTA: minlength y maxlength no funcionan en type="number", se recomienda usar min y max -->
+            <input type="number" id="dni" name="dni" required min="1000000" max="99999999" placeholder="Ej: 20123456" />
+
+            <!-- Campo para el email del usuario -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="usuario@ejemplo.com" />
+
+            <!-- Campo para la fecha de nacimiento -->
+            <label for="birthdate">Fecha de Nacimiento</label>
+            <input type="date" id="birthdate" name="birthdate" />
+
+            <!-- Selección del tipo de usuario -->
+            <label for="role">Tipo de Usuario</label>
+            <select name="role" id="role" required>
+                <option value="">-- Selecciona --</option>
+                <option value="user">Usuario estandar</option>
+                <option value="admin">Administrador</option>
+            </select>
+
+            <!-- Campo para la contraseña -->
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="32" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mínimo 8 caracteres: al menos 1 letra mayúscula, 1 minúscula y 1 número" placeholder="Contraseña" />
+
+            <!-- Campo para confirmar la contraseña -->
+            <label for="confirmPassword">Reingresa la Contraseña</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Repite la Contraseña">
+
+            <!-- Área para mostrar mensajes de error -->
+            <span id="registerError" class="error" aria-live="polite"></span>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit">Crear Cuenta</button>
+        </form>
+        <!-- Enlace para usuarios que ya tienen cuenta -->
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesion</a></p>
+    </main>
+    <script src="../js/script.js"></script>
+</body>
+</html>
