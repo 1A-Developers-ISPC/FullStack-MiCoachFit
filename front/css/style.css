@@ -116,6 +116,10 @@ footer p{
 } */
 
 
+.none {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .hero-text {
         top: 50%;
