@@ -7,10 +7,11 @@
 
     <title>MiCoachFit</title>
 
-    <link rel="shortcut icon" href="./img/logo-MiCoachFit/logo-MiCoachFit-color.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo-MiCoachFit/logo-MiCoachFit-color.png" type="image/x-icon" />
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/tienda.css" />
+    <!-- <link rel="stylesheet" href="../css/landing.css"> -->
+    <link rel="stylesheet" href="../css/calendar.css">
 </head>
 
 <body>
@@ -38,142 +39,95 @@
                         <a class="nav-link" aria-current="page" href="/front/pages/tienda.html">Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/sobre_nos.html">Sobre Nos</a>
+                        <a class="nav-link" href="./pages/sobre_nos.html">Sobre Nos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/servicios.html">Servicios</a>
+                        <a class="nav-link" href="./pages/servicios.html">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                        <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <!-- Botón con SVG -->
-                        <a type="button" class="btn d-flex align-items-center gap-2" href="./pages/login.html">
+                        <a type="button" class="btn d-flex align-items-center gap-2" href="../pages/login.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                                 <path d="M14 14s-1-4-6-4-6 4-6 4 1 1 6 1 6-1 6-1z" />
                             </svg>
-                            Iniciar Sesión
+                            <span class="none">Iniciar Sesión</span>
                         </a>
+                    </li>
+                    <!-- BOTÓN LOGOUT (oculto por defecto) -->
+                    <li class="nav-item">
+                        <button id="btn-logout" class="btn btn-outline-danger d-none">
+                            Cerrar Sesión
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <h1 class="mb-3">Tienda MiCoachFit</h1>
-
-
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./producto_energy_drink.html">
-                        <img src="../img/img-web/producto_fitness-energy.png" class="card-img-top"
-                            alt="Bebida Energética Fitness">
-                    </a>
-
-                    <div class="card-body">
-                        <h5 class="card-title">PowerFuel Energy Drink</h5>
-                        <p class="card-text">Bebida energética para atletas.</p>
-                        <a href="./producto_energy_drink.html" class="btn ">Ver Más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./producto_fitness_tshirt.html">
-                        <img src="../img/img-web/producto_fitness-tshirt.png" class="card-img-top"
-                            alt="Camiseta Fitness">
-                    </a>
-
-                    <div class="card-body">
-                        <h5 class="card-title">FlexFit Training Tee</h5>
-                        <p class="card-text">Camiseta deportiva de alto rendimiento. </p>
-                        <a href="producto_camisa.html" class="btn">Ver Más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./producto_energy_drink.html">
-                        <img src="../img/img-web/producto_highprotein-energy.png" class="card-img-top"
-                            alt="Alimento Energético">
-                    </a>
-
-                    <div class="card-body">
-                        <h5 class="card-title">ProBar Max Protein</h5>
-                        <p class="card-text">Barra energética con 20g.</p>
-                        <!-- <p>de proteína, avena integral, almendras y chocolate
-                            oscuro. Perfecta para antes o después del entrenamiento. Sin azúcares añadidos, sabor
-                            intenso y textura crujiente.</p>
-                        <a href="/front/pages/producto_alimento_energetico.html" class="btn">Ver Más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./rodilllo.html">
-                        <img src="../img/img-web/rodillo.jpg" class="card-img-top"
-                            alt="Rodillo Masajeador">
-                    </a>
-
-                    <div class="card-body">
-                        <h5 class="card-title">Rodillo Masajeador Micoachtfit</h5>
-                        <p class="card-text">Diseñado para optimizar tu recuperación y mejorar tu rendimiento físico</p>
-                        <a href="./rodilllo.html" class="btn ">Ver Más</a>
-                    </div>
-                </div>
+    <!-- Mensaje Bienvenida -->
+      <main class="card">
+        <h1 id="welcome" class="p-2 fs-2">Bienvenido</h1>
         
-                 </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./colchoneta.fitnes.html"></a>
-                    <img src="../img/img-web/colchoneta fitness.jpg" class="card-img-top">
-                        <img src="" class="card-img-top"
-                            alt="Colchoneta fitness">
-                    </a>
+        
+        <a href="login.html" class="text-decoration-none">Cerrar Sesion</a>
 
-                    <div class="card-body">
-                        <h5 class="card-title">Colchoneta fitness</h5>
-                        <p class="card-text"> Colchoneta de alta densidad para yoga, pilates y entrenamiento funcional. 
-                            Máximo agarre y amortiguación superior.
-                             Material antideslizante y fácil de limpiar, ideal para cualquier superficie.</p>
-                        <a href="colchoneta.fitnes.html" class="btn">Ver Más</a>
-                    </div>
-                </div>
+    </main>
+    <!-- Contenido principal de la página -->
+ <div class="container calendar-container">
+    <div class="row g-4">
+      <!-- Columna izquierda: Calendario -->
+      <div class="col-lg-6">
+        <div class="calendar">
+          <div class="calendar-header">
+            <button id="prevMonth" class="btn btn-outline-secondary btn-sm">&lt;</button>
+            <h4 id="monthAndYear"></h4>
+            <button id="nextMonth" class="btn btn-outline-secondary btn-sm">&gt;</button>
+          </div>
 
-                 </div>
-            <div class="col-sm-4">
-                <div class="card" style="width: 21rem;">
-                    <a href="./producto_camisa.html">
-                        <img src="" class="card-img-top"
-                            alt="Colchoneta fitness">
-                    </a>
-
-                    <div class="card-body">
-                        <h5 class="card-title">Colchoneta fitness</h5>
-                        <p class="card-text"> Colchoneta de alta densidad para yoga, pilates y entrenamiento funcional. 
-                            Máximo agarre y amortiguación superior.
-                             Material antideslizante y fácil de limpiar, ideal para cualquier superficie.</p>
-                        <a href="producto_camisa.html" class="btn">Ver Más</a>
-                    </div>
-                </div>
-                
-            
-            </div>
+          <div class="calendar-grid" id="calendarDays">
+            <!-- Se llena dinámicamente con JS -->
+          </div>
         </div>
+      </div>
+
+      <!-- Columna derecha: Formulario de sesión -->
+      <div class="col-lg-6">
+        <div class="session-form">
+          <h2>Cross & Fit</h2>
+          <small>Pulsa para editar datos</small>
+          <hr>
+
+          <form id="sessionForm">
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha</label>
+              <input type="text" class="form-control" id="fecha" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="hora" class="form-label">Hora</label>
+              <input type="time" class="form-control" id="hora" required>
+            </div>
+            <div class="mb-3">
+              <label for="duracion" class="form-label">Duración (minutos)</label>
+              <input type="number" class="form-control" id="duracion" min="15" max="180" required>
+            </div>
+            <div class="mb-3">
+              <label for="observaciones" class="form-label">Observaciones</label>
+              <textarea class="form-control" id="observaciones" rows="3" placeholder="Notas o comentarios..."></textarea>
+            </div>
+            <div class="d-flex justify-content-end gap-2">
+              <button type="reset" class="btn btn-secondary">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    
-
-
-
+  </div>
 
 
 
@@ -187,9 +141,9 @@
                     </li>
                     <li class="fs-6"><a href="/front/index.html">Inicio</a></li>
                     <li class="fs-6"><a href="./tienda.html">Tienda</a></li>
-                    <li class="fs-6"><a href="../pages/sobre_nos.html">Sobre Nos</a></li>
-                    <li class="fs-6"><a href="../pages/servicios.html">Servicios</a></li>
-                    <li class="fs-6"><a href="../pages/contacto.html">Contacto</a></li>
+                    <li class="fs-6"><a href="./pages/sobre_nos.html">Sobre Nos</a></li>
+                    <li class="fs-6"><a href="./pages/servicios.html">Servicios</a></li>
+                    <li class="fs-6"><a href="./pages/contacto.html">Contacto</a></li>
                 </ul>
             </div>
             <div class="col-sm-4 d-flex flex-column align-items-center justify-content-center">
@@ -225,8 +179,15 @@
         </div>
     </footer>
 
+    <script src="../js/calendar.js"></script>
     <script src="../js/script.js"></script>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script>
+        // mostramos el usuario pasado por query string (si existe)
+        const params = new URLSearchParams(location.search);
+        const u = params.get('user');
+        if (u) document.getElementById('welcome').textContent = `Bienvenido, ${decodeURIComponent(u)}`;
+    </script>
 </body>
 
 </html>

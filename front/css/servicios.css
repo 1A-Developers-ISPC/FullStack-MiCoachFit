@@ -35,27 +35,27 @@ body {
 }
 
 /* Estilos de la barra de navegación */
-.navbar {
+/* .navbar {
   background-color: #fff !important;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
-}
+} */
 
-.nav-link {
+/* .nav-link {
   font-weight: 500;
   color: #555 !important;
-}
-
+} */
+/* 
 .nav-link.active {
   border-bottom: 2px solid #0d6efd;
-}
+} */
 
 /* Botón de Iniciar Sesión */
-.btn-outline-warning {
+/* .btn-outline-warning {
   border-color: #ffc107;
   color: #ffc107;
-}
+} */
 
-.btn-outline-warning:hover {
+/* .btn-outline-warning:hover {
   background-color: #ffc107;
   color: #fff;
-}
+} */
