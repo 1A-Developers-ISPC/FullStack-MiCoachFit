@@ -1,10 +1,11 @@
 // script.js (versión corregida y con debug)
-// Asegúrate de que <script src="script.js"></script> esté al final del <body> o usa DOMContentLoaded como aquí.
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Credenciales de prueba
   const HARD_USERNAME = 'usuario1';
   const HARD_PASSWORD = 'Pass1234!';
+  
 
   /* -------------------- LOGIN -------------------- */
   const loginForm = document.getElementById('loginForm');

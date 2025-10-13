@@ -147,9 +147,9 @@ footer p{
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
-    width: 100vw;
-    min-height: 100vh;
+    padding: 30px 10px;
+    width: 100%;
+    min-height: 90vh;
 }
 
 .seccion-izquierda {
@@ -195,10 +195,12 @@ footer p{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: inline-block;
     margin-left: 10px;
+    
     width: 50%;
     margin: 0 auto;
     position:relative;
     top: 100px;
+    
     left: 30px;
     
 }
@@ -238,26 +240,31 @@ footer p{
 .seccion-derecha button:hover {
     color:#ffee00;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .seccion-principal {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        padding: 20px;
     }
 
-    .seccion-izquierda,
-    .seccion-derecha {
+    .seccion-izquierda, .seccion-derecha {
         width: 100%;
-        margin-bottom: 20px;
+        margin: 0;
+        position: static;
+        top: 0;
+        left: 0;
     }
 
     .seccion-izquierda {
-        position: relative;
-        top: 10px;
-        font-size: small;
-        
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .seccion-derecha input {
+        width: 100%;
+    }
+
+    .seccion-derecha button {
+        width: 100%;
     }
 }
-
