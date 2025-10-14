@@ -1,6 +1,8 @@
+
 from sistema import SistemaUsuarios
 from database import ConexionBD
 from dbConfig import db_host, db_port, db_user, db_password, db_name
+
 
 def main():
     db_conn = ConexionBD(
@@ -11,46 +13,26 @@ def main():
         database=db_name
     )
 
-    # Verifica si la conexión es exitosa
     if not db_conn.conectar():
         print("El programa no puede continuar sin una conexión a la base de datos.")
         return
 
-    # Pasa la instancia de la base de datos al sistema de usuarios
     sistema = SistemaUsuarios(db_conn)
 
-    # Crear admin por defecto si no existe en la BD
-    if not sistema.buscar_usuario("admin"):
-        sistema.registrar_usuario(
-            nombre="Admin",
-            apellido="Principal",
-            nombre_usuario="admin",
-            telefono="123456789",
-            email="admin@ejemplo.com",
-            contrasena="admin123",
-            rol="admin"
-        )
-    
+    # El menú principal solo tiene Iniciar Sesión y Salir, por el momento. Faltaría agregar el Registro
     while True:
-        print("\n=== Sistema de Usuarios MiCoachFit ===")
-        print("1. Registrar usuario")
-        print("2. Iniciar sesión")
-        print("3. Salir")
+        print("\n=== Sistema MiCoachFit ===")
+        print("1. Iniciar Sesión")
+        print("2. Salir")
         opcion = input("Seleccione una opción: ")
 
         if opcion == '1':
-            nombre = input("Nombre: ")
-            apellido = input("Apellido: ")
-            nombre_usuario = input("Nombre de usuario: ")
-            telefono = input("Teléfono (solo números): ")
-            email = input("Email: ")
+            email_login = input("Email de usuario: ") 
             contrasena = input("Contraseña: ")
-            sistema.registrar_usuario(nombre, apellido, nombre_usuario, telefono, email, contrasena)
+            
+            
+            sistema.iniciar_sesion(email_login, contrasena)
         elif opcion == '2':
-            nombre_usuario = input("Nombre de usuario: ")
-            contrasena = input("Contraseña: ")
-            sistema.iniciar_sesion(nombre_usuario, contrasena)
-        elif opcion == '3':
             print("\nHasta luego!")
             break
         else:
@@ -58,5 +40,5 @@ def main():
 
     db_conn.desconectar()
 
-if __name__ == "__main__":
+if __name__ == "__main__":  
     main()
