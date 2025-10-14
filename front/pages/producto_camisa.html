@@ -1,20 +1,22 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MiCoachFit-Contacto</title>
+    <title>MiCoachFit</title>
 
-  <link rel="shortcut icon" href="../img/logo-MiCoachFit/logo-MiCoachFit-color.png" type="image/x-icon">
-  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/logo-MiCoachFit/logo-MiCoachFit-color.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tienda.css">
 </head>
 
 <body>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="#">
                 <img src="../img/logo-MiCoachFit/logo-MiCoachFit-horizontal-color-07.png" alt="Logo-horizontal-color" height="50px"
                     class="d-inline-block align-text-top" />
             </a>
@@ -30,10 +32,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/front/index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/front/pages/tienda.html">Tienda</a>
+                        <a class="nav-link" aria-current="page" href="../pages/tienda.html">Tienda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/sobre_nos.html">Sobre Nos</a>
@@ -46,7 +48,7 @@
                     </li>
                     <li class="nav-item">
                         <!-- Botón con SVG -->
-                        <a type="button" class="btn d-flex align-items-center gap-2" href="./login.html">
+                        <a type="button" class="btn d-flex align-items-center gap-2" href="./pages/login.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -59,74 +61,53 @@
             </div>
         </div>
     </nav>
+    <!-- Contenido principal de la página -->
+    <div class="container m-4">
+        <div class="row m-2">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <img class="img-fluid w-70" src="../img/img-web/producto_fitness-tshirt.png" alt="">
+            </div>
+            <div class="col-sm-4">
+                <h2 class="fs-2">Camiseta Fitness</h2>
+                <p class="p-2 ">Eleva tu rendimiento con nuestra Remera Fitness Pro,
+                    diseñada para brindarte máxima comodidad y estilo durante tus entrenamientos.
+                    Confeccionada con tela transpirable de alta calidad y un ajuste ergonómico,
+                    esta remera te permite moverte libremente y mantenerte fresco en cada sesión.</p>
+
+                <!-- <h3>Precio: 2.50€</h3> -->
+                <!-- <button type="button" class="btn btn-primary">Añadir al Carrito</button> -->
+                <a href="https://wa.me/5493516326925" target="_blank" 
+                    class="p-2 text-decoration-none text-dark boton_consultas">
+                    Consultas
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                    </svg>
+                </a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <h3 class="fs-5 p-2">Descripción del Producto</h3>
+                <p class="p-3">
+
+                    Nuestra Remera Fitness Pro está especialmente pensada para deportistas
+                    y personas activas. Su tecnología secadora de sudor garantiza que el
+                    tejido absorba rápidamente la humedad, mientras que su material elástico iguala
+                    la libertad total de movimiento, ideal para el running o el levantamiento de pesas.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
 
 
-  <div class="container-fluid m-2 p-2">
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-5 p-3">
-        <h3 class="fs-4">Ponete en Contacto para recibir asesoramiento Personalizado</h3>
-        <p class="fs-5">Lleva al máximo tu Proximo nivel en la forma de organizar tus clases </p>
-
-        <ul class="list-unstyled m-3">
-          <li >
-            <a href="#" class="text-decoration-none text-dark mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="logoWhatsapp"
-                viewBox="0 0 16 16">
-                <path
-                  d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-              </svg>
-              (201) 555-0124
-            </a>
-          </li>
-          <li>
-            <a href="#" class="text-decoration-none text-dark mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
-                viewBox="0 0 16 16">
-                <path
-                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-              </svg>
-              contacto@micoachfit.com
-            </a>
-          </li>
-          <li>
-            <a href="#" class="text-decoration-none text-dark mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-              </svg>
-              Av. Rafael Nuñez 5087, Cerro de las Rosas
-            </a>
-          </li>
-        </ul>
-
-
-
-      </div>
-      <div class="col-sm-4">
-        <form class="g-3 needs-validation border p-3 rounded" action="https://formsubmit.co/caebalbastro@gmail.com"
-          method="post" novalidate>
-          <label class="form-label" for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-
-          <label class="form-label" for="apellido">Apellido</label>
-          <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Apellido">
-
-          <label class="form-label" for="email">Email</label>
-          <input class="form-control" type="email" id="email" name="email" placeholder="Email">
-
-          <label class="form-label" for="telefono">Telefono</label>
-          <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono"><br><br>
-
-          <button class="btn bg-body-tertiary" type="submit">Enviar</button>
-        </form>
-      </div>
-      <div class="col-sm-2"></div>
+        </div>
     </div>
-  </div>
 
-
-   <footer class="container-fluid">
+    <footer class="container-fluid">
         <div class="row">
             <div class="col-sm-4">
                 <ul>
@@ -134,7 +115,7 @@
                         <p>MiCoachFit</p>
                     </li>
                     <li class="fs-6"><a href="/front/index.html">Inicio</a></li>
-                    <li class="fs-6"><a href="./tienda.html">Tienda</a></li>
+                    <li class="fs-6"><a href="../pages/tienda.html">Tienda</a></li>
                     <li class="fs-6"><a href="../pages/sobre_nos.html">Sobre Nos</a></li>
                     <li class="fs-6"><a href="../pages/servicios.html">Servicios</a></li>
                     <li class="fs-6"><a href="../pages/contacto.html">Contacto</a></li>
@@ -161,7 +142,7 @@
                             </svg></a>
                     </li>
                     <li>
-                        <a href="https://wa.me/5493516326925" target="_blank" >
+                        <a href="https://wa.me/5493516326925" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-whatsapp" viewBox="0 0 16 16">
                                 <path
@@ -174,9 +155,8 @@
         </div>
     </footer>
 
-
-  <script src="../js/script.js"></script>
-  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
