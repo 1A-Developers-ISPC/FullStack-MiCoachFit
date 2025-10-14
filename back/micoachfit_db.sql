@@ -167,30 +167,30 @@ INSERT INTO ROLES (nombre_rol) VALUES
 
 -- 1. USUARIO ADMIN (Rol_ID = 1)
 INSERT INTO USUARIOS (nombre, apellido, email, password_hash, telefono, rol_id, entrenador_vinculado_id) VALUES
-('Eric', 'Nievas', 'ericnievas_admin@micoachfit.com', 'ericadmin123', '1123456789', 1, NULL);
+('admin', 'micoachfit', 'admin@micoachfit.com', 'admin123', '1123456789', 1, NULL);
 SET @admin_id = LAST_INSERT_ID();
 
 
 -- 2. USUARIO ENTRENADOR (Rol_ID = 2)
 INSERT INTO USUARIOS (nombre, apellido, email, password_hash, telefono, rol_id, entrenador_vinculado_id) VALUES
-('Tiago', 'Heredia', 'tiagoheredia_entrenador@coachfit.com', 'thcfit123', '1198765432', 2, NULL);
-SET @tiago_usuario_id = LAST_INSERT_ID();
+('Entrenador', '1', 'entrenador1@micoachfit.com', 'entrenador1123', '1198765432', 2, NULL);
+SET @entrenador1_usuario_id = LAST_INSERT_ID();
 
 
 -- 3. CUENTA DE NEGOCIO ENTRENADOR TIAGO (FK a USUARIOS.usuario_id)
 -- Usamos 'THCFIT' como nick_entrenador para vincular alumnos
 INSERT INTO ENTRENADORES (nick_entrenador, fecha_registro, estado_suscripcion, usuario_admin_id) VALUES
-('THCFIT', NOW(), 'Activo', @tiago_usuario_id);
-SET @tiago_entrenador_id = LAST_INSERT_ID();
+('E1FIT', NOW(), 'Activo', @entrenador1_usuario_id);
+SET @entrenador1_entrenador_id = LAST_INSERT_ID();
 
 
 -- 4. ALUMNOS (Rol_ID = 3) VINCULADOS al Entrenador Tiago
 -- Los alumnos tienen la FK entrenador_vinculado_id = @tiago_entrenador_id
 INSERT INTO USUARIOS (nombre, apellido, email, password_hash, telefono, rol_id, entrenador_vinculado_id) VALUES
-('Maximo', 'Lopez', 'maxi@alumno.com', 'hash_maxi', '1140001000', 3, @tiago_entrenador_id),
-('Kiara', 'Perez', 'kiara@alumno.com', 'hash_kiara', '1140002000', 3, @tiago_entrenador_id),
-('Carlos', 'Diaz', 'carlos@alumno.com', 'hash_carlos', '1140003000', 3, @tiago_entrenador_id),
-('Dario', 'Gómez', 'dario@alumno.com', 'hash_dario', '1140004000', 3, @tiago_entrenador_id);
+('Maximo', 'Lopez', 'maxi@alumno.com', 'hash_maxi', '1140001000', 3, @entrenador1_entrenador_id),
+('Kiara', 'Perez', 'kiara@alumno.com', 'hash_kiara', '1140002000', 3, @entrenador1_entrenador_id),
+('Carlos', 'Diaz', 'carlos@alumno.com', 'hash_carlos', '1140003000', 3, @entrenador1_entrenador_id),
+('Dario', 'Gómez', 'dario@alumno.com', 'hash_dario', '1140004000', 3, @entrenador1_entrenador_id);
 
 
 
@@ -263,6 +263,7 @@ INNER JOIN
     ENTRENADORES AS E ON U.entrenador_vinculado_id = E.entrenador_id
 WHERE
     R.nombre_rol = 'Alumno' 
-    AND E.nick_entrenador = 'THCFIT' -- Filtra por el nick del entrenador
+    AND E.nick_entrenador = 'E1FIT' -- Filtra por el nick del entrenador
 ORDER BY
     U.apellido;
+    
