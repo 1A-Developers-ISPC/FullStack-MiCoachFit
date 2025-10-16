@@ -1,11 +1,14 @@
-/* --- VARIABLES--- */
 :root {
     --header-color: #ffffff;
     --body-color: #f4f7f6;
-    --footer-color: #1f3894;
-    --accent-color: #2e8392;
+    --footer-color: #1f3894; 
+    --accent-color: #2e8392; 
     --text-color: #333;
     --border-image: 3px solid var(--accent-color);
+
+    
+    --bs-primary: var(--footer-color); 
+    --bs-secondary: var(--accent-color); 
 }
 
 * {
@@ -24,33 +27,25 @@ body {
     flex-direction: column;
 }
 
-/* main {
-    flex: 1;
-} */
-
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
-/* .navbar-brand img {
-            border-radius: 50%;
-        } */
-
-.navbar-nav .nav-link {
-    font-weight: 500;
-    transition: color 0.3s ease;
+.seccion-titulo {
+    color: var(--footer-color); 
+    margin-bottom: 25px;
+    font-weight: 700; 
+    text-align: center;
+    font-size: calc(1.475rem + 1.8vw); 
+    line-height: 1.2;
 }
 
-.navbar-nav .nav-link:hover {
-    color: var(--accent-color) !important;
-}
-
-.btn-outline-warning {
-    border-width: 2px;
-    font-weight: 500;
+@media (min-width: 1200px) {
+    .seccion-titulo {
+        font-size: 2.5rem; 
+    }
 }
 
 /* --- SECCIÓN SOBRE NOSOTROS --- */
@@ -58,17 +53,40 @@ img {
     padding: 40px 0;
 }
 
-#sobre-nosotros h2 {
-    color: var(--footer-color);
-    margin-bottom: 25px;
-    font-weight: 700;
-    text-align: center;
-}
-
-#sobre-nosotros p {
+#sobre-nosotros .container p {
     margin-bottom: 20px;
     text-align: justify;
     font-size: 1.05rem;
+}
+
+/* --- SECCIÓN NUESTROS SERVICIOS  --- */
+.servicios-container {
+    background-color: white; 
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 40px auto; 
+    max-width: 1320px; 
+}
+
+/* Estilo para las tarjetas de servicio */
+.servicio-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--body-color); 
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 10px;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.servicio-card .card-title {
+    color: var(--footer-color) !important; 
+    border-bottom: 2px solid var(--footer-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
 }
 
 /* --- SECCIÓN NUESTRO EQUIPO --- */
@@ -77,15 +95,15 @@ img {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    margin: 40px 0;
+    margin: 40px auto; /* Centra el contenedor y le da margen */
+    max-width: 1320px;
 }
 
+
 .equipo-titulo {
-    color: var(--footer-color);
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 700;
+    margin-bottom: 40px; 
 }
+
 
 .equipo {
     display: flex;
@@ -159,6 +177,10 @@ figcaption p {
     margin: 40px 0;
 }
 
+.btn-centro a {
+    text-decoration: none;
+}
+
 .btn-transformacion {
     padding: 15px 35px;
     background: linear-gradient(135deg, var(--footer-color), var(--accent-color));
@@ -168,7 +190,7 @@ figcaption p {
     border: none;
     border-radius: 50px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    transition: all .5s ease;
     cursor: pointer;
     text-align: center;
 }
@@ -176,20 +198,23 @@ figcaption p {
 .btn-transformacion:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: #fefefe;
+    background: linear-gradient(135deg, var(--accent-color), var(--footer-color)); 
 }
 
-/* --- FOOTER --- */
-/* footer {
+
+/* --- FOOTER  --- */
+footer {
     background-color: var(--footer-color);
     color: white;
     padding: 40px 0 20px;
     margin-top: 60px;
-} */
+}
 
 footer .row {
     align-items: center;
 }
-/* 
+
 footer ul {
     list-style: none;
     padding: 0;
@@ -198,7 +223,7 @@ footer ul {
     flex-direction: column;
     gap: 8px;
     align-items: center;
-} */
+}
 
 footer a {
     color: white;
@@ -208,17 +233,19 @@ footer a {
 
 footer a:hover {
     opacity: 0.8;
-    color: #ffc107;
+    color: #ffc107; 
 }
 
 footer svg {
     transition: transform 0.3s ease;
     width: 24px;
     height: 24px;
+    color: white; 
 }
 
 footer svg:hover {
     transform: scale(1.2);
+    color: #ffc107;
 }
 
 .footer-logo {
@@ -228,11 +255,6 @@ footer svg:hover {
     text-align: center;
 }
 
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 
 /* --- DISEÑO RESPONSIVO --- */
 
@@ -247,17 +269,12 @@ footer svg:hover {
         min-width: 100%;
         max-width: 100%;
     }
-
-    .footer-social {
-        justify-content: center;
-        margin-top: 20px;
-    }
 }
 
 /* Para Móviles Grandes */
 @media (max-width: 768px) {
     .equipo-titulo {
-        font-size: 1.8rem;
+        margin-bottom: 30px;
     }
 
     .nuestro-equipo {
@@ -283,7 +300,7 @@ footer svg:hover {
         font-size: 1rem;
     }
 
-    footer .row>div {
+    footer .col-sm-4 {
         margin-bottom: 25px;
         text-align: center;
     }
@@ -296,7 +313,6 @@ footer svg:hover {
 /* Para Móviles Pequeños (400px o menos) */
 @media (max-width: 400px) {
     .equipo-titulo {
-        font-size: 1.6rem;
         margin-bottom: 30px;
     }
 
@@ -333,10 +349,5 @@ footer svg:hover {
     #sobre-nosotros p {
         text-align: left;
         font-size: 1rem;
-    }
-
-    .footer-social {
-        flex-direction: row;
-        justify-content: center;
     }
 }

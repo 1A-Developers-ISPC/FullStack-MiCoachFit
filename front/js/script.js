@@ -1,10 +1,11 @@
 // script.js (versión corregida y con debug)
-// Asegúrate de que <script src="script.js"></script> esté al final del <body> o usa DOMContentLoaded como aquí.
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Credenciales de prueba
   const HARD_USERNAME = 'usuario1';
   const HARD_PASSWORD = 'Pass1234!';
+  
 
   /* -------------------- LOGIN -------------------- */
   const loginForm = document.getElementById('loginForm');
@@ -27,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const enteredPass = passwordInput.value;
 
       // 2) Intentamos login contra localStorage (usuarios registrados)
-      let localUsers = null;
+      // let localUsers = null;
+      let localUsers = [];
       try {
         localUsers = JSON.parse(localStorage.getItem('users')) || [];
       } catch (err) {
@@ -40,14 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (found) {
         // login exitoso usando usuario registrado en localStorage
         console.log('Login OK (localStorage):', found.username || found.email);
-        window.location.href = 'landing.html?user=' + encodeURIComponent(found.username || found.email);
+        window.location.href = 'calendar.html?user=' + encodeURIComponent(found.username || found.email);
         return;
       }
 
       // 3) Si no está en localStorage, comprobamos las credenciales hardcodeadas (solo ejemplo)
       if (enteredUser === HARD_USERNAME && enteredPass === HARD_PASSWORD) {
         console.log('Login OK (hardcoded)');
-        window.location.href = 'landing.html?user=' + encodeURIComponent(enteredUser);
+        window.location.href = 'calendar.html?user=' + encodeURIComponent(enteredUser);
         return;
       }
 

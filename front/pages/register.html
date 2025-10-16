@@ -3,15 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register MiCoachFit</title>
+    <link rel="shortcut icon" href="../img/logo-MiCoachFit/logo-MiCoachFit-color.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/login_registro.css">
 </head>
 <body id="page-register">
     <!-- Contenedor principal con estilo de tarjeta -->
     <main class="card">
+        <a href="../index.html">
+            <img src="/front/img/logo-MiCoachFit/logo-MiCoachFit-color.png" class="register_logo_login" alt="logo-MiCoachFit-color">
+        </a>
         <!-- Título principal de la página -->
         <h1>Registro de Usuario</h1>
         <!-- Formulario de registro de usuario -->
-        <form id="registerForm">
+        <form id="registerForm" method="post">
             <!-- Campo para el nombre del usuario -->
             <label for="firstName">Nombre</label>
             <input type="text" id="firstName" name="firstName" required minlength="2" maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios" placeholder="Nombre" />
@@ -59,5 +63,6 @@
         <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesion</a></p>
     </main>
     <script src="../js/script.js"></script>
+    
 </body>
 </html>

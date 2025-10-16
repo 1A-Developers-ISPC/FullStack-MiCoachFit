@@ -9,20 +9,26 @@
 </head>
 
 <body id="page-landing">
+    <!-- Contenedor principal con estilo de tarjeta -->
     <main class="card">
+        <!-- Título de bienvenida, se personaliza si hay usuario en la URL -->
         <h1 id="welcome">Bienvenido</h1>
-        <p>Has iniciado sesion correctamente. Esta es una Landing page de ejemplo.</p>
+        <!-- Mensaje de inicio de sesión exitoso -->
+        <p>Has iniciado sesion correctamente.</p>
+        <!-- Enlace para ir al calendario -->
+        <a href="../pages/calendar.html">Ir al Calendario</a>
+        <!-- Enlace para cerrar sesión (volver al login) -->
         <a href="login.html">Cerrar Sesion</a>
-
     </main>
 
     <script>
-        // mostramos el usuario pasado por query string (si existe)
+        // Obtenemos parámetros de la URL
         const params = new URLSearchParams(location.search);
+        // Buscamos el parámetro 'user'
         const u = params.get('user');
+        // Si existe, personalizamos el mensaje de bienvenida
         if (u) document.getElementById('welcome').textContent = `Bienvenido, ${decodeURIComponent(u)}`;
     </script>
-
 </body>
 
 </html>
