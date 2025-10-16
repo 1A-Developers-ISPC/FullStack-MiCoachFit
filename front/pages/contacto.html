@@ -46,7 +46,7 @@
                     </li>
                     <li class="nav-item">
                         <!-- Botón con SVG -->
-                        <a type="button" class="btn d-flex align-items-center gap-2" href="../login.html">
+                        <a type="button" class="btn d-flex align-items-center gap-2" href="../pages/login.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -101,7 +101,7 @@
         </ul>
 
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3407.065333786607!2d-64.24427792460095!3d-31.357176274289102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432994b484be22b%3A0xa1172bbd345c1ca7!2zQXYuIFJhZmFlbCBOw7rDsWV6IDUwODcsIFg1MDIxIEPDs3Jkb2Jh!5e0!3m2!1ses!2sar!4v1760482768903!5m2!1ses!2sar" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3407.065333786607!2d-64.24427792460095!3d-31.357176274289102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432994b484be22b%3A0xa1172bbd345c1ca7!2zQXYuIFJhZmFlbCBOw7rDsWV6IDUwODcsIFg1MDIxIEPDs3Jkb2Jh!5e0!3m2!1ses!2sar!4v1760482768903!5m2!1ses!2sar" width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
 
@@ -109,18 +109,18 @@
       </div>
       <div class="col-sm-4">
         <form class="g-3 needs-validation border p-3 rounded" action="https://formsubmit.co/caebalbastro@gmail.com"
-          method="post" novalidate>
+          method="post">
           <label class="form-label" for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+          <input type="text" class="form-control" id="nombre" name="nombre" required minlength="2" maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios" placeholder="Nombre">
 
           <label class="form-label" for="apellido">Apellido</label>
-          <input class="form-control" type="text" id="apellido" name="apellido" placeholder="Apellido">
+          <input class="form-control" type="text" id="apellido" name="apellido" required minlength="2" maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo letras y espacios"  placeholder="Apellido">
 
           <label class="form-label" for="email">Email</label>
-          <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+          <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
 
           <label class="form-label" for="telefono">Telefono</label>
-          <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Telefono"><br><br>
+          <input class="form-control" type="tel" id="telefono" name="telefono" required placeholder="Telefono" pattern="^[0-9]{8,15}$" title="Ingrese solo numeros (entre 8 y 15 digitos) "><br><br>
 
           <button class="btn bg-body-tertiary" type="submit">Enviar</button>
         </form>
