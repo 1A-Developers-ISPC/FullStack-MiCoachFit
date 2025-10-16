@@ -14,9 +14,15 @@ body {
 .card {
     background: #fff;
     padding: 50px;
-    border-radius: 12px;
+    border-radius:  12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
     width: 320px
+}
+
+.register_logo_login {
+    display: block;
+    margin: 250px auto 50px auto;
+    max-width: 150px;
 }
 
 .logo_login {
